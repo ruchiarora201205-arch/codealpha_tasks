@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Video Collab — Room</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <span id="roomLabel">Room: —</span>
+      <div class="controls">
+        <button id="toggleMic">🎤 Mute</button>
+        <button id="toggleCam">📷 Camera Off</button>
+        <button id="shareScreenBtn">🖥️ Share Screen</button>
+        <button id="leaveBtn">🚪 Leave</button>
+      </div>
+    </header>
+
+    <div class="main-area">
+      <!-- VIDEO GRID -->
+      <div id="videoGrid" class="video-grid"></div>
+
+      <!-- SIDE PANEL: tabs for Whiteboard / Chat / Files -->
+      <div class="side-panel">
+        <div class="side-tabs">
+          <button class="side-tab active" data-panel="whiteboardPanel">🖊️ Whiteboard</button>
+          <button class="side-tab" data-panel="chatPanel">💬 Chat</button>
+          <button class="side-tab" data-panel="filesPanel">📁 Files</button>
+        </div>
+
+        <div id="whiteboardPanel" class="side-content active">
+          <canvas id="whiteboard" width="480" height="360"></canvas>
+          <div class="wb-tools">
+            <input type="color" id="wbColor" value="#00e5ff" />
+            <input type="range" id="wbWidth" min="1" max="20" value="3" />
+            <button id="wbClear">Clear</button>
+          </div>
+        </div>
+
+        <div id="chatPanel" class="side-content">
+          <div id="chatMessages" class="chat-messages"></div>
+          <div class="chat-input-row">
+            <input type="text" id="chatInput" placeholder="Type a message..." />
+            <button id="chatSendBtn">Send</button>
+          </div>
+        </div>
+
+        <div id="filesPanel" class="side-content">
+          <input type="file" id="fileInput" />
+          <button id="fileUploadBtn">Upload & Share</button>
+          <div id="fileList" class="file-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/room.js"></script>
+</body>
+</html>

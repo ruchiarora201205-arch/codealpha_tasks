@@ -1,0 +1,107 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+body { background: #0f1115; color: #e6e6e6; height: 100vh; }
+
+/* ---------- AUTH PAGE ---------- */
+.auth-container {
+  max-width: 380px;
+  margin: 90px auto;
+  background: #1a1d24;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  text-align: center;
+}
+.auth-container h1 { margin-bottom: 20px; color: #00e5ff; }
+.tabs { display: flex; margin-bottom: 20px; border-radius: 8px; overflow: hidden; }
+.tab {
+  flex: 1; padding: 10px; background: #262a33; color: #aaa;
+  border: none; cursor: pointer; font-weight: bold;
+}
+.tab.active { background: #00e5ff; color: #0f1115; }
+#authForm { display: flex; flex-direction: column; gap: 12px; }
+#authForm input {
+  padding: 12px; border-radius: 6px; border: 1px solid #333;
+  background: #12141a; color: #fff;
+}
+#authForm button {
+  padding: 12px; border-radius: 6px; border: none;
+  background: #00e5ff; color: #0f1115; font-weight: bold; cursor: pointer;
+}
+.error { color: #ff5c5c; margin-top: 10px; min-height: 20px; }
+.room-join { margin-top: 20px; display: flex; gap: 8px; }
+.room-join input {
+  flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #333;
+  background: #12141a; color: #fff;
+}
+.room-join button {
+  padding: 10px 16px; border-radius: 6px; border: none;
+  background: #00e5ff; color: #0f1115; font-weight: bold; cursor: pointer;
+}
+
+/* ---------- ROOM PAGE ---------- */
+.app { display: flex; flex-direction: column; height: 100vh; }
+.topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 20px; background: #1a1d24; border-bottom: 1px solid #2a2e38;
+}
+.controls button {
+  margin-left: 8px; padding: 8px 14px; border-radius: 6px; border: none;
+  background: #262a33; color: #fff; cursor: pointer;
+}
+.controls button:hover { background: #333844; }
+#leaveBtn { background: #ff4d4d !important; }
+
+.main-area { flex: 1; display: flex; overflow: hidden; }
+
+.video-grid {
+  flex: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px; padding: 16px; overflow-y: auto; align-content: start;
+}
+.video-tile {
+  position: relative; background: #000; border-radius: 10px; overflow: hidden;
+  aspect-ratio: 16/9;
+}
+.video-tile video { width: 100%; height: 100%; object-fit: cover; }
+.video-tile .label {
+  position: absolute; bottom: 6px; left: 8px; background: rgba(0,0,0,0.6);
+  padding: 2px 8px; border-radius: 4px; font-size: 12px;
+}
+
+.side-panel {
+  width: 320px; background: #1a1d24; border-left: 1px solid #2a2e38;
+  display: flex; flex-direction: column;
+}
+.side-tabs { display: flex; }
+.side-tab {
+  flex: 1; padding: 10px; background: #12141a; color: #aaa; border: none; cursor: pointer;
+}
+.side-tab.active { background: #1a1d24; color: #00e5ff; border-bottom: 2px solid #00e5ff; }
+.side-content { display: none; flex: 1; flex-direction: column; padding: 12px; overflow-y: auto; }
+.side-content.active { display: flex; }
+
+#whiteboard { background: #fff; border-radius: 8px; width: 100%; touch-action: none; }
+.wb-tools { display: flex; gap: 8px; margin-top: 10px; align-items: center; }
+.wb-tools button {
+  padding: 6px 12px; border-radius: 6px; border: none; background: #262a33; color: #fff; cursor: pointer;
+}
+
+.chat-messages { flex: 1; overflow-y: auto; margin-bottom: 10px; }
+.chat-messages .msg { margin-bottom: 8px; font-size: 14px; }
+.chat-messages .msg b { color: #00e5ff; }
+.chat-input-row { display: flex; gap: 6px; }
+.chat-input-row input {
+  flex: 1; padding: 8px; border-radius: 6px; border: 1px solid #333;
+  background: #12141a; color: #fff;
+}
+.chat-input-row button {
+  padding: 8px 12px; border-radius: 6px; border: none; background: #00e5ff; cursor: pointer;
+}
+
+.file-list { margin-top: 12px; }
+.file-list a {
+  display: block; color: #00e5ff; margin-bottom: 6px; word-break: break-all;
+}
+#fileUploadBtn {
+  margin-top: 8px; padding: 8px 12px; border-radius: 6px; border: none;
+  background: #00e5ff; cursor: pointer; width: 100%;
+}

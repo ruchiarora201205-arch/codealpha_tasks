@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Video Collab — Login</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <h1>Video Collab</h1>
+    <div class="tabs">
+      <button id="loginTab" class="tab active">Login</button>
+      <button id="signupTab" class="tab">Sign Up</button>
+    </div>
+
+    <form id="authForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit" id="submitBtn">Login</button>
+    </form>
+
+    <p id="errorMsg" class="error"></p>
+
+    <div class="room-join" id="roomJoinBox" style="display:none;">
+      <input type="text" id="roomId" placeholder="Room ID (e.g. team-standup)" />
+      <button id="joinRoomBtn">Join Room</button>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
