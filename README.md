@@ -71,8 +71,4 @@ The Supabase URL and public **anon/publishable key** are already embedded in the
 └── README.md
 ```
 
-## 📝 Notes
 
-- Cart state is stored in the browser's `localStorage` under the key `ogs_cart`.
-- UPI payment ID is hardcoded in the file (`UPI_ID` constant) — update it to your own.
-- This is a client-only app; all business logic and access rules should be enforced via Supabase RLS, not the JavaScript in this file.
